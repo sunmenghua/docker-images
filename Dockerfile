@@ -23,7 +23,6 @@ RUN docker-php-ext-install exif
 RUN docker-php-ext-install bz2
 RUN docker-php-ext-install bcmath
 RUN docker-php-ext-install gettext
-RUN docker-php-ext-install mysqli
 RUN pecl install redis
 RUN pecl install xdebug
 RUN pecl install memcached-3.0.3
