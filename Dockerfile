@@ -27,9 +27,7 @@ RUN docker-php-ext-install mysqli
 RUN pecl install redis
 RUN pecl install xdebug
 RUN pecl install memcached-3.0.3
-RUN pecl install memcache-2.2.7
-RUN pecl install phar-2.0.0
-RUN docker-php-ext-enable redis xdebug memcached memcache
+RUN docker-php-ext-enable redis xdebug memcached
 
 RUN mkdir -p /home/packages/download && \
     wget -P /home/packages/download/ https://pecl.php.net/get/yaf-2.3.5.tgz && \
