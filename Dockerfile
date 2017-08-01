@@ -38,5 +38,9 @@ RUN docker-php-ext-install iconv mcrypt && \
     cd /home/packages/download/yaf-2.3.5/ && ./configure --with-php-config=/usr/local/bin/php-config && \
     make && make install
 
+RUN PHP_CONF='/usr/local/etc/php/conf.d/' \
+    && ADD_EXT(){ echo -e "extension = ${1}.so;\n${2}" > "$PHP_CONF/${1}.ini"; } \
+    && ADD_EXT yaf "[yaf]\nyaf.environ = develop\nyaf.use_namespace = 1" \
+    
 EXPOSE 9000
 CMD ["php-fpm"]
