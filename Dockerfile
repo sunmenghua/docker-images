@@ -4,6 +4,7 @@ ENV PHP_INI_DIR /usr/local/etc/php
 ENV PHP_CONF_DIR /usr/local/etc/php/conf.d
 
 RUN apt-get update && apt-get install -y \
+	wget \
         zip \
         libbz2-dev \
         libfreetype6-dev \
