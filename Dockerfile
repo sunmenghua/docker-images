@@ -26,7 +26,7 @@ RUN docker-php-ext-install gettext
 RUN docker-php-ext-install mysqli
 RUN pecl install redis
 RUN pecl install xdebug
-RUN pecl install memcached-2.2.0
+RUN pecl install memcached-3.0.3
 RUN pecl install memcache-2.2.7
 RUN pecl install phar-2.0.0
 RUN docker-php-ext-enable redis xdebug memcached memcache
