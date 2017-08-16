@@ -1,4 +1,4 @@
-FROM php:7.1-fpm
+FROM php:5.6-fpm
 
 ENV PHP_INI_DIR /usr/local/etc/php
 ENV PHP_CONF_DIR /usr/local/etc/php/conf.d
@@ -30,9 +30,9 @@ RUN pecl install memcached-3.0.3
 RUN docker-php-ext-enable redis xdebug memcached
 
 RUN mkdir -p /home/packages/download && \
-    wget -P /home/packages/download/ https://pecl.php.net/get/yaf-3.0.5.tgz && \
-    tar zxvf /home/packages/download/yaf-3.0.5.tgz -C /home/packages/download/ && \
-    cd /home/packages/download/yaf-3.0.5/ && \
+    wget -P /home/packages/download/ https://pecl.php.net/get/yaf-2.3.5.tgz && \
+    tar zxvf /home/packages/download/yaf-2.3.5.tgz -C /home/packages/download/ && \
+    cd /home/packages/download/yaf-2.3.5/ && \
     /usr/local/bin/phpize && \
     ./configure --with-php-config=/usr/local/bin/php-config && \
     make && make install
